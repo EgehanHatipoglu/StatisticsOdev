@@ -5,5 +5,6 @@ def weighted_srs(data, n, weights, with_replacement):
     copied_data, copied_weights = data.copy(), weights.copy()
     for i in range(n):
         index = random.choices(range(len(copied_data)), weights=copied_weights, k=1)[0]
-        sample.append(copied_data.pop(index)); copied_weights.pop(index)
+        sample.append(copied_data.pop(index))
+        copied_weights.pop(index)
     return sample
